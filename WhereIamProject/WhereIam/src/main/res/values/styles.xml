@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme"
+        parent="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/CustomActionBar</item>
+    </style>
+
+
+    <!-- ActionBar styles -->
+    <style name="CustomActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@color/goblinGreen</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@color/goblinGreen</item>
+    </style>
+</resources>
