@@ -10,10 +10,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Set;
 
 import it.kytech.whereiam.R;
+import it.kytech.whereiam.utils.ListCategoryIndexer;
 import it.kytech.whereiam.utils.Tag;
 
 public class TagListAdapter extends ArrayAdapter<Tag> implements SectionIndexer {
@@ -21,8 +20,7 @@ public class TagListAdapter extends ArrayAdapter<Tag> implements SectionIndexer 
     private final Context context;
     private final ArrayList<Tag> itemsArrayList;
 
-    HashMap<String, Integer> alphaIndexer;
-    String[] sections;
+    ListCategoryIndexer<String> alphaIndexer;
 
     public TagListAdapter(Context context, ArrayList<Tag> itemsArrayList) {
 
@@ -32,11 +30,13 @@ public class TagListAdapter extends ArrayAdapter<Tag> implements SectionIndexer 
         this.itemsArrayList = itemsArrayList;
         int size = itemsArrayList.size();
 
-        alphaIndexer = new HashMap<String, Integer>();
+        alphaIndexer = new ListCategoryIndexer<String>();
 
         Collections.sort(this.itemsArrayList);
 
-        for (int x = 0; x < size; x++) {
+        int x;
+
+        for (x = 0; x < size; x++) {
             String s = itemsArrayList.get(x).getTag();
 
             String ch = s.substring(0, 1);
@@ -47,16 +47,7 @@ public class TagListAdapter extends ArrayAdapter<Tag> implements SectionIndexer 
             }
         }
 
-        Set<String> sectionLetters = alphaIndexer.keySet();
-
-        // create a list from the set to sort
-        ArrayList<String> sectionList = new ArrayList<String>(sectionLetters);
-
-        Collections.sort(sectionList);
-
-        sections = new String[sectionList.size()];
-
-        sectionList.toArray(sections);
+        alphaIndexer.endInsert(x);
     }
 
     @Override
@@ -85,19 +76,16 @@ public class TagListAdapter extends ArrayAdapter<Tag> implements SectionIndexer 
 
     @Override
     public Object[] getSections() {
-        return sections;
+        return alphaIndexer.getSections();
     }
 
     @Override
-    public int getPositionForSection(int i) {
-        return 0;
+    public int getPositionForSection(int section) {
+        return alphaIndexer.getPositionForSection(section);
     }
 
     @Override
     public int getSectionForPosition(int i) {
-        if(i < sections.length){
-            return alphaIndexer.get(sections[i]);
-        }
-        return 0;
+        return alphaIndexer.getSectionForPosition(i);
     }
 }

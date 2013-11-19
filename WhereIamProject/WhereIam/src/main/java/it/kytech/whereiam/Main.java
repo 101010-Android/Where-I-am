@@ -55,6 +55,13 @@ public class Main extends ActionBarActivity {
 
     private ArrayList<Tag> generateData(){
         ArrayList<Tag> items = new ArrayList<Tag>();
+        items.add(new Tag("AAA","40.716667", "-74"));
+        items.add(new Tag("BBB","40.716667", "-74"));
+        items.add(new Tag("CCC","40.716667", "-74"));
+        items.add(new Tag("DDD","40.716667", "-74"));
+        items.add(new Tag("EEE","40.716667", "-74"));
+        items.add(new Tag("FFF","40.716667", "-74"));
+        items.add(new Tag("GGG","40.716667", "-74"));
         items.add(new Tag("New York","40.716667", "-74"));
         items.add(new Tag("Venice", "45.439722", "12.331944"));
         items.add(new Tag("Tokyo","35.689506", "139.6917"));

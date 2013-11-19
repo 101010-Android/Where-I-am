@@ -14,4 +14,15 @@
     <string name="action_add">Share Location</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Dialog Text-->
+    <string name="dialog_update_message">Would you update the list?</string>
+
+    <!-- General Buttons -->
+    <string name="button_accept">Accept</string>
+    <string name="button_exit">Exit</string>
+    <string name="button_undo">Undo</string>
+    <string name="button_ok">Ok</string>
+    <string name="button_continue">Continue</string>
+    <string name="button_cancel">Cancel</string>
+
 </resources>
