@@ -12,6 +12,7 @@
     <string name="action_remove">Remove</string>
     <string name="action_modify">Edit</string>
     <string name="action_add">Share Location</string>
+    <string name="action_update">Update Tags</string>
     <string name="action_settings">Settings</string>
 
     <!-- Dialog Text-->

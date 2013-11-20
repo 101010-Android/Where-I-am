@@ -5,7 +5,7 @@
         android:icon="@drawable/ic_action_new"
         app:showAsAction="ifRoom" />
     <item android:id="@+id/action_update"
-        android:title="@string/action_add"
+        android:title="@string/action_update"
         android:icon="@drawable/ic_action_refresh"
         app:showAsAction="ifRoom" />
     <item android:id="@+id/action_settings"

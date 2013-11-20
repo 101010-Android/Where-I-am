@@ -3,6 +3,8 @@ package it.kytech.whereiam;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,6 +50,13 @@ public class Main extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
+                return true;
+            case R.id.action_update:
+
+                FragmentManager fm = getSupportFragmentManager();
+                DialogFragment d = GeneralDialog.getIstance().getDialog(GeneralDialog.DIALOG_UPDATE_ID);
+                d.show(fm, "dlg_update_tag");
+
                 return true;
         }
         return super.onOptionsItemSelected(item);
